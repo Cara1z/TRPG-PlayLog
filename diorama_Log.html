@@ -37,69 +37,53 @@
 
     /* 컨테이너 설정 */
 
-    .container {display:flex;justify-content:center; flex-direction: row;}
-    .inner-container {display:flex;flex-direction: column;width: 200px;text-align:center;margin-top:50px}
-
-/* 컨테이너 설정 */
-
-
-/* 툴팁 기본 스타일 설정 시작 */
-
-    .tooltip {
-      position: relative;
-      display: block;
-    }
-
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 120px;
-      background-color: black;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 5px 0;
-
-      position: absolute;
-      z-index: 1;
-    }
-
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-    }
-
-/* 툴팁 기본 스타일 설정 끝 */
-
-/* -------------------------- */
-
-/* 툴팁 화살표 기본 스타일 설정 시작 */
-
-    .tooltip .tooltiptext::after {
-      content: " ";
-      position: absolute;
-      border-style: solid;
-      border-width: 5px;
-    }
-
-/* 툴팁 화살표 기본 스타일 설정 끝 */
-
-/* -------------------------- */
-
-/* 위쪽 툴팁 시작 */
-
-    .tooltip .tooltip-top {
-      width: 120px;
-      bottom: 150%;
-      left: 50%;
-      margin-left: -60px;
-    }
-
-    .tooltip .tooltip-top::after {
-      top: 100%;
-      left: 50%;
-      margin-left: -5px;
-      border-color: black transparent transparent transparent;
-    }
-/* 툴팁 방향 설정 끝 */
+[hover-tooltip] {
+  position: relative;
+  cursor: default;
+}
+[hover-tooltip]:hover::before {
+  content: attr(hover-tooltip);
+  font-size: 14px;
+  text-align: center;
+  position: absolute;
+  display: block;
+  left: 50%;
+  min-width: 150px;
+  max-width: 200px;
+  bottom: calc(100% + 10px);
+  transform: translate(-50%);
+  animation: fade-in 300ms ease;
+  background: #272727;
+  border-radius: 4px;
+  padding: 10px;
+  color: #ffffff;
+  z-index: 1;
+}
+[hover-tooltip]:hover::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 50%;
+  width: 0;
+  height: 0;
+  bottom: calc(100% + 6px);
+  margin-left: -3px;
+  border: 1px solid black;
+  border-color: #272727 transparent transparent transparent;
+  border-width: 4px 6px 0;
+  animation: fade-in 300ms ease;
+  z-index: 1;
+}
+[hover-tooltip][tooltip-position=bottom]:hover::before {
+  bottom: auto;
+  top: calc(100% + 10px);
+}
+[hover-tooltip][tooltip-position=bottom]:hover::after {
+  bottom: auto;
+  top: calc(100% + 6px);
+  border-color: transparent transparent #272727;
+  border-width: 0 6px 4px;
+}
 
 </style>
     
@@ -132,9 +116,11 @@
                 </div>
                 <div class="ccl_textWrap" style="box-sizing: border-box;float: left;line-height: 1.6;margin-left: 20px;margin-right: 20px">
                     <p class="ccl_Uname" style="box-sizing: border-box;margin: 0;font-weight: 800;color: #9e9e9e">GM</p>
-                    <p class="ccl_Utext" style="box-sizing: border-box;margin: 0;font-weight: 400;color: #ffffff">퇴근 후 직장인의 평범한 모습이네요.<span class="tooltip">¹
-                        <span class="tooltiptext tooltip-top">이건길이를테스트하기위해길게쓰는어느테스트문구입니다</span>
-                    </span>
+                    <p class="ccl_Utext" style="box-sizing: border-box;margin: 0;font-weight: 400;color: #ffffff">퇴근 후 직장인의 평범한 모습이네요.
+                    <div class="container">
+                        <span hover-tooltip="Lots of tooltip text. This is how it looks when there is a whole lotta text. It goes on and on, and the tooltip grows in the direction of its position." tooltip-position="top">¹</span>
+                          <span hover-tooltip="Brief text." tooltip-position="bottom">Short</span>
+                    </div>
                     <br style="box-sizing: border-box">하늘에는 드문드문 별이 보이는 것도 같습니다.</p>
                 </div>
             </div>

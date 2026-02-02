@@ -57,7 +57,7 @@
   border-radius: 4px;
   padding: 10px;
   color: #ffffff;
-  z-index: 9999;
+  z-index: 1;
 }
 [hover-tooltip]:hover::after {
   content: "";
@@ -72,17 +72,7 @@
   border-color: #272727 transparent transparent transparent;
   border-width: 4px 6px 0;
   animation: fade-in 300ms ease;
-  z-index: 9999;
-}
-[hover-tooltip][tooltip-position=bottom]:hover::before {
-  bottom: auto;
-  top: calc(100% + 10px);
-}
-[hover-tooltip][tooltip-position=bottom]:hover::after {
-  bottom: auto;
-  top: calc(100% + 6px);
-  border-color: transparent transparent #272727;
-  border-width: 0 6px 4px;
+  z-index: 1;
 }
 
 </style>

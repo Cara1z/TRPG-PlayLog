@@ -37,35 +37,35 @@
 
     /* 컨테이너 설정 */
 
-.container {display:flex;justify-content:center; flex-direction: row;}
-.inner-container {display:flex;flex-direction: column;width: 200px;text-align:center;margin-top:50px}
+    .container {display:flex;justify-content:center; flex-direction: row;}
+    .inner-container {display:flex;flex-direction: column;width: 200px;text-align:center;margin-top:50px}
 
 /* 컨테이너 설정 */
 
 
 /* 툴팁 기본 스타일 설정 시작 */
 
-.tooltip {
-  position: relative;
-  display: block;
-}
+    .tooltip {
+      position: relative;
+      display: block;
+    }
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
 
-  position: absolute;
-  z-index: 1;
-}
+      position: absolute;
+      z-index: 1;
+    }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
 
 /* 툴팁 기본 스타일 설정 끝 */
 
@@ -73,12 +73,12 @@
 
 /* 툴팁 화살표 기본 스타일 설정 시작 */
 
-.tooltip .tooltiptext::after {
-  content: " ";
-  position: absolute;
-  border-style: solid;
-  border-width: 5px;
-}
+    .tooltip .tooltiptext::after {
+      content: " ";
+      position: absolute;
+      border-style: solid;
+      border-width: 5px;
+    }
 
 /* 툴팁 화살표 기본 스타일 설정 끝 */
 
@@ -86,22 +86,23 @@
 
 /* 위쪽 툴팁 시작 */
 
-.tooltip .tooltip-top {
-  width: 120px;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -60px;
-}
+    .tooltip .tooltip-top {
+      width: 120px;
+      bottom: 150%;
+      left: 50%;
+      margin-left: -60px;
+    }
 
-.tooltip .tooltip-top::after {
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-color: black transparent transparent transparent;
-}
+    .tooltip .tooltip-top::after {
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-color: black transparent transparent transparent;
+    }
 /* 툴팁 방향 설정 끝 */
 
 </style>
+    
 <div class="container">
 <div class="cclog_wrap" id="cclog_ccf" style="box-sizing: border-box">
     <div class="ccl_inWrap" style="box-sizing: border-box;font-size: 15px;letter-spacing: -.5px;color: #ffffff">
@@ -131,10 +132,10 @@
                 </div>
                 <div class="ccl_textWrap" style="box-sizing: border-box;float: left;line-height: 1.6;margin-left: 20px;margin-right: 20px">
                     <p class="ccl_Uname" style="box-sizing: border-box;margin: 0;font-weight: 800;color: #9e9e9e">GM</p>
-                    <p class="ccl_Utext" style="box-sizing: border-box;margin: 0;font-weight: 400;color: #ffffff">퇴근 후 직장인의 평범한 모습이네요.
-                    <div class="tooltip">¹
+                    <p class="ccl_Utext" style="box-sizing: border-box;margin: 0;font-weight: 400;color: #ffffff">퇴근 후 직장인의 평범한 모습이네요.<div class="tooltip">¹
                         <span class="tooltiptext tooltip-top">왼쪽 툴팁</span>
                     </div>
+
                     <br style="box-sizing: border-box">
                     하늘에는 드문드문 별이 보이는 것도 같습니다.</p>
                 </div>
